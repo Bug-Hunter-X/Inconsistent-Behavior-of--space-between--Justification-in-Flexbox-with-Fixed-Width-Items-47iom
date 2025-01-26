@@ -1,0 +1,24 @@
+To solve this issue, you can add `min-width` or `flex-wrap:wrap;` to the container. This ensures proper spacing even when items' total width exceeds the container width:
+
+```css
+.container {
+  display: flex;
+  justify-content: space-between;
+  min-width: fit-content;
+}
+
+/* Alternative solution using flex-wrap */
+/*.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}*/
+
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+```
+
+By adding a `min-width`, the container will expand horizontally to accommodate all items without wrapping or overlapping. Alternatively, using `flex-wrap: wrap;` will allow the items to wrap onto multiple lines if the container is too narrow.
