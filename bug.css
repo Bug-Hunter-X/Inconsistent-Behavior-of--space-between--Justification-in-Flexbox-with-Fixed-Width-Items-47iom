@@ -1,0 +1,18 @@
+The following CSS code causes unexpected behavior in some browsers:
+
+```css
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+```
+
+The issue is that the `space-between` justification might not work as expected if the flex items have `width` set to a fixed value and their total width exceeds the container's width.  This is particularly true if the container's width is not explicitly set (it depends on the content width) and the flex items don't shrink.
+
+In some browsers, the last item might wrap to the next line, or they will overlap and display in an unexpected order.
